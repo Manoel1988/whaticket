@@ -33,6 +33,7 @@ import queueIntegrationRoutes from "./queueIntegrationRoutes";
 import forgotsRoutes from "./forgotPasswordRoutes";
 import versionRouter from "./versionRoutes";
 import reportsRoutes from './reportsRoutes';
+import salesRoutes from "./salesRoutes";
 
 const routes = Router();
 
@@ -69,6 +70,7 @@ routes.use(promptRoutes);
 routes.use(queueIntegrationRoutes);
 routes.use(forgotsRoutes);
 routes.use(reportsRoutes);
+routes.use(salesRoutes);
 routes.use(versionRouter);
 
 export default routes;
