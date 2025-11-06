@@ -28,6 +28,7 @@ import PeopleIcon from "@material-ui/icons/People";
 import ListIcon from "@material-ui/icons/ListAlt";
 import AnnouncementIcon from "@material-ui/icons/Announcement";
 import ForumIcon from "@material-ui/icons/Forum";
+import BarChartIcon from "@material-ui/icons/BarChart";
 import LocalAtmIcon from '@material-ui/icons/LocalAtm';
 import RotateRight from "@material-ui/icons/RotateRight";
 import { i18n } from "../translate/i18n";
@@ -383,35 +384,43 @@ const MainListItems = (props) => {
         role={user.profile}
         perform={"drawer-admin-items:view"}
         yes={() => (
-          <>
-            <ListSubheader
-              hidden={collapsed}
-              style={{
-                position: "relative",
-                fontSize: "17px",
-                textAlign: "left",
-                paddingLeft: 20
-              }}
-              inset
-              color="inherit">
+            <>
+              <ListSubheader
+                hidden={collapsed}
+                style={{
+                  position: "relative",
+                  fontSize: "17px",
+                  textAlign: "left",
+                  paddingLeft: 20
+                }}
+                inset
+                color="inherit"
+              >
+                <Typography variant="overline" style={{ fontWeight: "normal" }}>
+                  {i18n.t("Gerência")}
+                </Typography>
+              </ListSubheader>
 
-              <Typography variant="overline" style={{ fontWeight: 'normal' }}>  {i18n.t("Gerência")} </Typography>
-            </ListSubheader>
+              <ListItemLink
+                small
+                to="/"
+                primary="Dashboard"
+                icon={<DashboardOutlinedIcon />}
+              />
 
-            <ListItemLink
-              small
-              to="/"
-              primary="Dashboard"
-              icon={<DashboardOutlinedIcon />}
-            />
-			
-			<ListItemLink
-				to="/relatorios"
-				primary={i18n.t("Relátorios")}
-				icon={<SearchIcon />}
-			/>
-			
-          </>
+              <ListItemLink
+                small
+                to="/dashboard-vendas"
+                primary="Dashboard de Vendas"
+                icon={<BarChartIcon />}
+              />
+
+              <ListItemLink
+                to="/relatorios"
+                primary={i18n.t("Relátorios")}
+                icon={<SearchIcon />}
+              />
+            </>
         )}
       />
       <Can
